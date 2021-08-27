@@ -3,7 +3,7 @@ import {
   SafeAreaView,
   Text,
 } from 'react-native';
-import styles from './style';
+import styles from './styles';
 import { useAppDispatch } from '../../redux/HookRedux';
 
 import { UsersActions } from '../../redux/User/UsersRedux';
