@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import { SafeAreaView } from 'react-native';
-import styles from './styles';
 import { useAppDispatch } from '../../redux/HookRedux';
-
 import { UsersActions } from '../../redux/User/UsersRedux';
 import { ChallengesActions } from '../../redux/Challenges/ChallengesRedux';
 import BrowseScreen from './browseScreen';
 import { RewardsActions } from '../../redux/Rewards/RewardsRedux';
 import { VideosActions } from '../../redux/Videos/VideosRedux';
+import styles from './styles';
 
 const Home = () => {
   const dispatch = useAppDispatch();
