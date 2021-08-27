@@ -4,3 +4,8 @@ export type TabRouteParams = {
   Social: undefined
   Profile: undefined
 };
+
+export type RootStackParams = {
+  Splash: undefined
+  TabRoute: TabRouteParams
+};
