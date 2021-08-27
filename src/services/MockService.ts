@@ -14,10 +14,15 @@ const create = (baseURL = 'https://61206a2924d11c001762ec44.mockapi.io/') => {
 
   const getChallengesRequest = () => api.get('challenges');
 
+  const getRewardsRequest = () => api.get('rewards');
+
+  const getVideosRequest = () => api.get('videos');
+
   return {
     getUsersRequest,
     getChallengesRequest,
-
+    getRewardsRequest,
+    getVideosRequest,
   };
 };
 
