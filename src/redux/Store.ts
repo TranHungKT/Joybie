@@ -3,12 +3,14 @@ import { configureStore } from '@reduxjs/toolkit';
 import createSagaMiddleware from '@redux-saga/core';
 
 import UsersReducer from './User/UsersRedux';
+import ChallengesReducer from './Challenges/ChallengesRedux';
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
   reducer: {
     users: UsersReducer,
+    challenges: ChallengesReducer,
   },
   middleware:
   (getDefaultMiddleware) => getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),
