@@ -69,7 +69,7 @@ const SlidePanel = () => {
             <FlatList
               data={users}
               renderItem={renderItem}
-
+              showsVerticalScrollIndicator={false}
             />
           </View>
         </>

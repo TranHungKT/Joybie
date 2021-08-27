@@ -27,7 +27,7 @@ const data : Item[] = [
     name: 'Email',
   },
   {
-    image: require('../../../assets/image/Icon_Whatsapp.png'),
+    image: require('../../../assets/image/Icon_shareLink.png'),
     name: 'Copy Link',
   },
 ];
@@ -50,6 +50,7 @@ const Social = () => {
       renderItem={renderItem}
       horizontal
       keyExtractor={({ index }: any) => index}
+      showsHorizontalScrollIndicator={false}
     />
   );
 };
