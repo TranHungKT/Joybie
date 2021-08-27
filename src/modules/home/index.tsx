@@ -1,28 +1,13 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { useAppDispatch } from '../../redux/HookRedux';
-import { UsersActions } from '../../redux/User/UsersRedux';
-import { ChallengesActions } from '../../redux/Challenges/ChallengesRedux';
 import BrowseScreen from './browseScreen';
-import { RewardsActions } from '../../redux/Rewards/RewardsRedux';
-import { VideosActions } from '../../redux/Videos/VideosRedux';
+
 import styles from './styles';
 
-const Home = () => {
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    dispatch(UsersActions.getUsersRequest());
-    dispatch(ChallengesActions.getChallengesRequest());
-    dispatch(VideosActions.getVideosRequest());
-    dispatch(RewardsActions.getRewardsRequest());
-  }, []);
-
-  return (
-    <SafeAreaView style={styles.centerContainer}>
-      <BrowseScreen />
-    </SafeAreaView>
-  );
-};
+const Home = () => (
+  <SafeAreaView style={styles.centerContainer}>
+    <BrowseScreen />
+  </SafeAreaView>
+);
 
 export default Home;
