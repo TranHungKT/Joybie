@@ -9,22 +9,24 @@ import Profile from '@modules/profile';
 import { NavigatorConstants } from '../constants/index';
 import { Colors } from '../styles/index';
 
-import { TabRouteParams } from './RoutesParams';
+import { BottomTabRouteParams } from './RoutesParams';
+import HomeTopTabBar from './HomeTopTabRoute';
 
-const TabNavigator = createBottomTabNavigator<TabRouteParams>();
+const TabNavigator = createBottomTabNavigator<BottomTabRouteParams>();
 
-const TabRoute = () => (
+const BottomTabRoute = () => (
   <TabNavigator.Navigator
     screenOptions={{
       tabBarShowLabel: true,
       tabBarActiveTintColor: Colors.Purple, // active icon color
       tabBarInactiveTintColor: Colors.Black, // inactive icon color
+      headerShown: false,
     }}
     tabBar={(props) => <MyTabBar {...props} />}
   >
     <TabNavigator.Screen
       name={NavigatorConstants.Home}
-      component={Home}
+      component={HomeTopTabBar}
     />
     <TabNavigator.Screen
       name={NavigatorConstants.Search}
@@ -41,4 +43,4 @@ const TabRoute = () => (
   </TabNavigator.Navigator>
 );
 
-export default TabRoute;
+export default BottomTabRoute;

@@ -1,5 +1,5 @@
 // External Dependencies
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   TouchableOpacity,
@@ -34,7 +34,7 @@ const MyTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
   const totalWidth = Dimensions.get('window').width;
   const tabWidth = totalWidth / state.routes.length;
 
-  React.useEffect(() => {
+  useEffect(() => {
     Animated.spring(translateValue, {
       toValue: state.index * tabWidth,
       velocity: 10,

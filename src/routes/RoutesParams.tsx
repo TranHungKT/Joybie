@@ -1,4 +1,4 @@
-export type TabRouteParams = {
+export type BottomTabRouteParams = {
   Home: undefined
   Search: undefined
   Social: undefined
@@ -7,5 +7,15 @@ export type TabRouteParams = {
 
 export type RootStackParams = {
   Splash: undefined
-  TabRoute: TabRouteParams
+  BottomTabRoute: BottomTabRouteParams
+};
+
+export type HomeTabRouteParams = {
+  Browse: undefined
+  Watch: undefined
+};
+
+export type SocialTabRouteParams = {
+  Update: undefined
+  Message: undefined
 };
