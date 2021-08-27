@@ -4,6 +4,7 @@ import MasonryList from '@react-native-seoul/masonry-list';
 import ImageCard from '../../../components/Common/Image';
 import { useAppSelector } from '../../../redux/HookRedux';
 import DotDotDot from '../../../assets/svg/DotDotDot';
+import styles from './styles';
 
 type HeightType = 'short' | 'long';
 
@@ -25,7 +26,7 @@ const getRandomStyle = (heightType: HeightType) => {
     },
     style: {
       height,
-      borderRadius: 10,
+      borderRadius: 16,
       alignSelf: 'stretch',
     },
   };
@@ -82,15 +83,15 @@ const BrowseScreen = () => {
             id={item.id}
             style={item.style}
           />
-          <View style={{ flexDirection: 'row', justifyContent: 'flex-start', marginTop: 10 }}>
-            <View style={{ flex: 3 }}>
-              <Text style={{ fontWeight: 'bold' }}>{challenges[i].brand}</Text>
-              <Text style={{ marginTop: 5, fontWeight: 'bold' }}>
+          <View style={styles.descriptionWrapper}>
+            <View style={styles.descriptionTextWrapper}>
+              <Text style={styles.brandText}>{challenges[i].brand}</Text>
+              <Text style={styles.numOfSaveText}>
                 {`${challenges[i].numOfSave} saved this`}
               </Text>
             </View>
-            <View style={{ flex: 1 }}>
-              <DotDotDot style={{ alignSelf: 'flex-end' }} />
+            <View style={styles.dotdotdotWrapper}>
+              <DotDotDot style={styles.dotdotdot} />
             </View>
           </View>
         </View>
