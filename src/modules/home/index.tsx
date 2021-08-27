@@ -1,12 +1,10 @@
 import React, { useEffect } from 'react';
-import {
-  SafeAreaView,
-  Text,
-} from 'react-native';
+import { SafeAreaView } from 'react-native';
 import styles from './style';
 import { useAppDispatch } from '../../redux/HookRedux';
 import { UsersActions } from '../../redux/User/UsersRedux';
 import { ChallengesActions } from '../../redux/Challenges/ChallengesRedux';
+import Challenges from '../../components/Challenges';
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -18,7 +16,7 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.centerContainer}>
-      <Text>InternalProject</Text>
+      <Challenges />
     </SafeAreaView>
   );
 };
