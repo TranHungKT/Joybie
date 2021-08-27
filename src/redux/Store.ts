@@ -5,6 +5,8 @@ import createSagaMiddleware from '@redux-saga/core';
 import UsersReducer from './User/UsersRedux';
 import ChallengesReducer from './Challenges/ChallengesRedux';
 
+import rootSaga from '../sagas';
+
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
@@ -19,4 +21,5 @@ const store = configureStore({
 export type RootState = ReturnType<typeof store.getState>;
 
 export type AppDispatch = typeof store.dispatch;
+sagaMiddleware.run(rootSaga);
 export default store;
