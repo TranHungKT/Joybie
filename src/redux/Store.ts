@@ -4,6 +4,8 @@ import createSagaMiddleware from '@redux-saga/core';
 
 import UsersReducer from './User/UsersRedux';
 import ChallengesReducer from './Challenges/ChallengesRedux';
+import RewardsReducer from './Rewards/RewardsRedux';
+import VideosReducer from './Videos/VideosRedux';
 
 import rootSaga from '../sagas';
 
@@ -13,6 +15,8 @@ const store = configureStore({
   reducer: {
     users: UsersReducer,
     challenges: ChallengesReducer,
+    rewards: RewardsReducer,
+    videos: VideosReducer,
   },
   middleware:
   (getDefaultMiddleware) => getDefaultMiddleware({ thunk: false }).concat(sagaMiddleware),
