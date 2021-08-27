@@ -16,6 +16,6 @@ export type HomeTabRouteParams = {
 };
 
 export type SocialTabRouteParams = {
-  Update: undefined
-  Message: undefined
+  Updates: undefined
+  Messages: undefined
 };

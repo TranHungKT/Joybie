@@ -77,6 +77,12 @@ const MyTopTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
           case NavigatorConstants.Watch:
             tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black }}>Watch</Text>;
             break;
+          case NavigatorConstants.Updates:
+            tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black }}>Updates</Text>;
+            break;
+          case NavigatorConstants.Messages:
+            tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black }}>Messages</Text>;
+            break;
           default:
             tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black }}>Browse</Text>;
             break;
