@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { SafeAreaView } from 'react-native';
-import styles from './style';
+import styles from './styles';
 import { useAppDispatch } from '../../redux/HookRedux';
 
 import { UsersActions } from '../../redux/User/UsersRedux';
 import { ChallengesActions } from '../../redux/Challenges/ChallengesRedux';
-import Challenges from '../../components/Challenges';
+import BrowseScreen from './browseScreen';
 import { RewardsActions } from '../../redux/Rewards/RewardsRedux';
 import { VideosActions } from '../../redux/Videos/VideosRedux';
 
@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.centerContainer}>
-      <Challenges />
+      <BrowseScreen />
     </SafeAreaView>
   );
 };
