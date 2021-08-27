@@ -46,16 +46,6 @@ const MyTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
 
   return (
     <View style={styles.tabContainer}>
-      <Animated.View
-        style={[
-          styles.slider,
-          {
-            transform: [{ translateX: translateValue }],
-            width: tabWidth,
-          },
-        ]}
-      />
-
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
         const label = options.tabBarLabel !== undefined
@@ -85,19 +75,19 @@ const MyTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
         let icon;
         switch (label) {
           case NavigatorConstants.Home:
-            icon = <HomeIcon width={30} height={30} fill={isFocused ? Colors.Purple : Colors.Black} />;
+            icon = <HomeIcon width={24} height={24} fill={isFocused ? Colors.Purple : Colors.Black} />;
             break;
           case NavigatorConstants.Search:
-            icon = <SearchIcon width={35} height={35} fill={isFocused ? Colors.Purple : Colors.Black} />;
+            icon = <SearchIcon width={26} height={26} fill={isFocused ? Colors.Purple : Colors.Black} />;
             break;
           case NavigatorConstants.Social:
-            icon = <SocialIcon width={30} height={30} fill={isFocused ? Colors.Purple : Colors.Black} />;
+            icon = <SocialIcon width={24} height={24} fill={isFocused ? Colors.Purple : Colors.Black} />;
             break;
           case NavigatorConstants.Profile:
-            icon = <ProfileIcon width={30} height={30} fill={isFocused ? Colors.Purple : Colors.Black} />;
+            icon = <ProfileIcon width={24} height={24} fill={isFocused ? Colors.Purple : Colors.Black} />;
             break;
           default:
-            icon = <HomeIcon width={30} height={30} fill={isFocused ? Colors.Purple : Colors.Black} />;
+            icon = <HomeIcon width={24} height={24} fill={isFocused ? Colors.Purple : Colors.Black} />;
             break;
         }
 
