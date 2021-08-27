@@ -18,6 +18,7 @@ export interface IGetUsersSuccessPayload {
   firstName: string
   lastName: string
   id: string
+  avatar: string
 }
 export interface IGetUsersErrorPaylaod {
   error: string
