@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import {
-  Dimensions, Text, TextInput, TouchableOpacity, View, FlatList, ListRenderItemInfo,
+  Dimensions, Text, TextInput, TouchableOpacity, View, FlatList, ListRenderItemInfo, Image,
 } from 'react-native';
 import SlidingUpPanel from 'rn-sliding-up-panel';
 import { CloseIcon } from '@assets/index';
@@ -20,10 +20,16 @@ const SlidePanel = () => {
   const { users } = useAppSelector((state) => state.users);
 
   const renderItem = ({ item, index }: ListRenderItemInfo<IGetUsersSuccessPayload>) => {
-    const { firstName, lastName } = item;
+    const { firstName } = item;
     return (
       <View key={index} style={styles.nameView}>
-        <Text>{`${lastName} ${firstName}`}</Text>
+        <View style={styles.rowView}>
+          <Image source={{ uri: item.avatar }} style={styles.image} />
+          <Text style={styles.firstName}>{firstName}</Text>
+        </View>
+        <TouchableOpacity style={styles.buttonView}>
+          <Text style={styles.send}>Send</Text>
+        </TouchableOpacity>
       </View>
     );
   };
@@ -38,11 +44,12 @@ const SlidePanel = () => {
           bottom: 0,
         }}
         containerStyle={styles.slideStyle}
+        allowDragging={false}
       >
         <>
           <View style={styles.header}>
             <View style={styles.closeIcon}>
-              <CloseIcon />
+              <CloseIcon onPress={() => refPanel.current?.hide()} />
 
             </View>
             <Text style={styles.title}>Share Challenge</Text>
@@ -58,10 +65,13 @@ const SlidePanel = () => {
               placeholderTextColor={Colors.Black}
             />
           </View>
-          <FlatList
-            data={users}
-            renderItem={renderItem}
-          />
+          <View style={styles.listView}>
+            <FlatList
+              data={users}
+              renderItem={renderItem}
+
+            />
+          </View>
         </>
       </SlidingUpPanel>
     </>
