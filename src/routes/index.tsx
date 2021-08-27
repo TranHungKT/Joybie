@@ -3,15 +3,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Home from '@modules/home/index';
+import TabRoute from './TabRoute';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      {/* <Stack.Navigator>
         <Stack.Screen name="Home" component={Home} />
-      </Stack.Navigator>
+      </Stack.Navigator> */}
+      <TabRoute />
     </NavigationContainer>
   );
 }
