@@ -4,7 +4,7 @@ import {
 } from 'react-native';
 import SlidingUpPanel from 'rn-sliding-up-panel';
 import { CloseIcon } from '@assets/index';
-
+import FastImage from 'react-native-fast-image';
 import Social from './components/Social';
 
 import styles from './styles';
@@ -24,7 +24,7 @@ const SlidePanel = () => {
     return (
       <View key={index} style={styles.nameView}>
         <View style={styles.rowView}>
-          <Image source={{ uri: item.avatar }} style={styles.image} />
+          <FastImage source={{ uri: item.avatar }} style={styles.image} />
           <Text style={styles.firstName}>{firstName}</Text>
         </View>
         <TouchableOpacity style={styles.buttonView}>
@@ -69,6 +69,7 @@ const SlidePanel = () => {
             <FlatList
               data={users}
               renderItem={renderItem}
+              keyExtractor={({ index }:any) => index}
               showsVerticalScrollIndicator={false}
             />
           </View>
