@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import {
   View,
+  Text,
   TouchableOpacity,
   Animated,
   Dimensions,
@@ -12,31 +13,27 @@ import {
   NavigationHelpers,
 } from '@react-navigation/native';
 import {
-  BottomTabDescriptorMap,
-  BottomTabNavigationEventMap,
-} from '@react-navigation/bottom-tabs/src/types';
-
-import {
-  HomeIcon, SearchIcon, SocialIcon, ProfileIcon,
-} from '@assets/index';
+  MaterialTopTabDescriptorMap,
+  MaterialTopTabNavigationEventMap,
+} from '@react-navigation/material-top-tabs/lib/typescript/src/types';
 import { Colors } from '../../styles/index';
 import { NavigatorConstants } from '../../constants/index';
 import styles from './styles';
 
 interface MyTabBarProps {
   state: TabNavigationState<ParamListBase>;
-  descriptors: BottomTabDescriptorMap;
-  navigation: NavigationHelpers<ParamListBase, BottomTabNavigationEventMap>;
+  descriptors: MaterialTopTabDescriptorMap;
+  navigation: NavigationHelpers<ParamListBase, MaterialTopTabNavigationEventMap>;
 }
 
-const MyTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
+const MyTopTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
   const [translateValue] = useState(new Animated.Value(0));
   const totalWidth = Dimensions.get('window').width;
   const tabWidth = totalWidth / state.routes.length;
 
   useEffect(() => {
     Animated.spring(translateValue, {
-      toValue: state.index * tabWidth,
+      toValue: state.index * (tabWidth / 1.75),
       velocity: 10,
       speed: 6,
       bounciness: 4,
@@ -72,22 +69,22 @@ const MyTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
           });
         };
 
-        let icon;
+        let tabLabel;
         switch (label) {
-          case NavigatorConstants.Home:
-            icon = <HomeIcon width={24} height={24} fill={isFocused ? Colors.Purple : Colors.Black} />;
+          case NavigatorConstants.Browse:
+            tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black }}>Browse</Text>;
             break;
-          case NavigatorConstants.Search:
-            icon = <SearchIcon width={26} height={26} fill={isFocused ? Colors.Purple : Colors.Black} />;
+          case NavigatorConstants.Watch:
+            tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black }}>Watch</Text>;
             break;
-          case NavigatorConstants.Social:
-            icon = <SocialIcon width={24} height={24} fill={isFocused ? Colors.Purple : Colors.Black} />;
+          case NavigatorConstants.Updates:
+            tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black }}>Updates</Text>;
             break;
-          case NavigatorConstants.Profile:
-            icon = <ProfileIcon width={24} height={24} fill={isFocused ? Colors.Purple : Colors.Black} />;
+          case NavigatorConstants.Messages:
+            tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black }}>Messages</Text>;
             break;
           default:
-            icon = <HomeIcon width={24} height={24} fill={isFocused ? Colors.Purple : Colors.Black} />;
+            tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black }}>Browse</Text>;
             break;
         }
 
@@ -102,14 +99,23 @@ const MyTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
             onLongPress={onLongPress}
             style={styles.touchableContainer}
           >
-            <View style={styles.icon}>
-              {icon}
+            <View style={styles.tabLabel}>
+              {tabLabel}
             </View>
           </TouchableOpacity>
         );
       })}
+      <Animated.View
+        style={[
+          styles.slider,
+          {
+            transform: [{ translateX: translateValue }],
+            width: tabWidth / 4,
+          },
+        ]}
+      />
     </View>
   );
 };
 
-export default MyTabBar;
+export default MyTopTabBar;
