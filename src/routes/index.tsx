@@ -1,21 +1,14 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Home from '@modules/home/index';
 import TabRoute from './TabRoute';
 
-const Stack = createNativeStackNavigator();
-
-function App() {
+function AppRoute() {
   return (
     <NavigationContainer>
-      {/* <Stack.Navigator>
-        <Stack.Screen name="Home" component={Home} />
-      </Stack.Navigator> */}
       <TabRoute />
     </NavigationContainer>
   );
 }
 
-export default App;
+export default AppRoute;

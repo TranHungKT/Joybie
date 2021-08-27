@@ -83,19 +83,19 @@ const MyTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
         let icon;
         switch (label) {
           case NavigatorConstants.Home:
-            icon = <HomeIcon width={35} height={35} fill={isFocused ? Colors.Primary : Colors.Black} />;
+            icon = <HomeIcon width={35} height={35} fill={isFocused ? Colors.Purple : Colors.Black} />;
             break;
           case NavigatorConstants.Search:
-            icon = <InfoIcon width={30} height={30} fill={isFocused ? Colors.Primary : Colors.Black} />;
+            icon = <InfoIcon width={30} height={30} fill={isFocused ? Colors.Purple : Colors.Black} />;
             break;
           case NavigatorConstants.Social:
-            icon = <HomeIcon width={35} height={35} fill={isFocused ? Colors.Primary : Colors.Black} />;
+            icon = <HomeIcon width={35} height={35} fill={isFocused ? Colors.Purple : Colors.Black} />;
             break;
           case NavigatorConstants.Profile:
-            icon = <HomeIcon width={35} height={35} fill={isFocused ? Colors.Primary : Colors.Black} />;
+            icon = <HomeIcon width={35} height={35} fill={isFocused ? Colors.Purple : Colors.Black} />;
             break;
           default:
-            icon = <HomeIcon width={35} height={35} fill={isFocused ? Colors.Primary : Colors.Black} />;
+            icon = <HomeIcon width={35} height={35} fill={isFocused ? Colors.Purple : Colors.Black} />;
             break;
         }
 

@@ -5,10 +5,10 @@ import {
 } from 'react-native';
 import styles from './styles';
 
-const Home = () => (
+const Search = () => (
   <SafeAreaView style={styles.centerContainer}>
-    <Text>Home</Text>
+    <Text>Search</Text>
   </SafeAreaView>
 );
 
-export default Home;
+export default Search;
