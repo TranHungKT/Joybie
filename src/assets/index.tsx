@@ -1,12 +1,12 @@
 // SVG
 import HomeIcon from './svg/HomeIcon';
-import InfoIcon from './svg/InfoIcon';
-import VisibilityOnIcon from './svg/VisibilityOnIcon';
-import VisibilityOffIcon from './svg/VisibilityOffIcon';
+import SearchIcon from './svg/SearchIcon';
+import SocialIcon from './svg/SocialIcon';
+import ProfileIcon from './svg/ProfileIcon';
 
 export {
   HomeIcon,
-  InfoIcon,
-  VisibilityOnIcon,
-  VisibilityOffIcon,
+  SearchIcon,
+  SocialIcon,
+  ProfileIcon,
 };

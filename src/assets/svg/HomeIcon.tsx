@@ -1,20 +1,17 @@
-import * as React from 'react';
-import Svg, {
-  SvgProps,
-  Path,
-} from 'react-native-svg';
+import * as React from 'react'
+import Svg, { SvgProps, Path } from 'react-native-svg';
 
 const HomeIcon = (props: SvgProps) => (
   <Svg
-    width={25}
-    height={24}
-    viewBox="0 0 25 24"
+    width={78}
+    height={78}
+    viewBox='0 0 78 78'
+    fill='none'
     {...props}
   >
     <Path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M19.49 20H16.5v-7a1 1 0 00-1-1h-6a1 1 0 00-1 1v7h-3l.007-8.417 6.992-7.151 7.002 7.192L19.49 20zm-8.99 0h4v-6h-4v6zm10.425-9.815l-7.71-7.884c-.376-.385-1.052-.385-1.43 0l-7.71 7.885a2.075 2.075 0 00-.574 1.438V20c0 1.103.847 2 1.888 2H19.61c1.042 0 1.89-.897 1.89-2v-8.376c0-.539-.21-1.063-.576-1.439z"
+      d='M13.893 34.65l22.652-22.653a3.236 3.236 0 014.576 0L63.774 34.65c.607.606.948 1.43.948 2.288v31.02a3.236 3.236 0 01-3.236 3.237h-16.18V48.542H32.36v22.653h-16.18a3.236 3.236 0 01-3.237-3.236V36.937c0-.858.342-1.68.948-2.287z'
+      fill={props.fill}
     />
   </Svg>
 );
