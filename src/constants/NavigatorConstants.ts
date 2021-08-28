@@ -9,7 +9,7 @@ export const Profile = 'Profile';
 
 // Home Tab Bar Routes
 export const Browse = 'Browse';
-export const Challenge = 'Challenge';
+export const DetailScreen = 'DetailScreen';
 export const Watch = 'Watch';
 
 // Social Tab Bar Routes

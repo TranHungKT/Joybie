@@ -8,11 +8,11 @@ export type BottomTabRouteParams = {
 export type RootStackParams = {
   Splash: undefined;
   BottomTabRoute: BottomTabRouteParams;
+  DetailScreen: { id: string };
 };
 
 export type HomeTabRouteParams = {
   Browse: undefined;
-  Challenge: { id: number };
   Watch: undefined;
 };
 

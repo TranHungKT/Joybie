@@ -1,9 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import MasonryList from '@react-native-seoul/masonry-list';
+import { useNavigation, NavigationProp } from '@react-navigation/native';
+
 import ImageCard from '../../../../components/PressableImageCard';
 import { useAppSelector } from '../../../../redux/HookRedux';
 import DotDotDot from '../../../../assets/svg/DotDotDot';
+import { RootStackParams } from '../../../../routes/RoutesParams';
+import { NavigatorConstants } from '../../../../constants';
+
 import styles from './styles';
 
 type HeightType = 'short' | 'long';
@@ -19,6 +24,7 @@ const getRandomStyle = (heightType: HeightType) => {
   } else {
     height = randomIntFromInterval(250, 300);
   }
+
   return {
     wrapperStyle: {
       height: height + 60,
@@ -34,6 +40,11 @@ const getRandomStyle = (heightType: HeightType) => {
 
 const BrowseScreen = () => {
   const { challenges } = useAppSelector((state) => state.challenges);
+
+  const navigation = useNavigation<NavigationProp<RootStackParams>>();
+  const navigateToChallengeDetail = (id: string) => () => {
+    navigation.navigate(NavigatorConstants.DetailScreen, { id });
+  };
 
   const getStyleList = () => {
     const styleList = [];
@@ -79,10 +90,12 @@ const BrowseScreen = () => {
       numColumns={2}
       renderItem={({ item, i }) => (
         <View style={item.wrapperStyle} key={i}>
-          <ImageCard
-            id={item.id}
-            style={item.style}
-          />
+          <TouchableOpacity onPress={navigateToChallengeDetail(item.id)}>
+            <ImageCard
+              id={item.id}
+              style={item.style}
+            />
+          </TouchableOpacity>
           <View style={styles.descriptionWrapper}>
             <View style={styles.descriptionTextWrapper}>
               <Text style={styles.brandText}>{challenges[i].brand}</Text>
