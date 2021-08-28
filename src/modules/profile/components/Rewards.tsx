@@ -34,7 +34,7 @@ const Rewards = (props : RewardsProps) => {
                 <Text>
                   Valid Till
                   {' '}
-                  {new Date(validTill).toLocaleDateString('en-Us')}
+                  {validTill}
                 </Text>
               </View>
               <TouchableOpacity>

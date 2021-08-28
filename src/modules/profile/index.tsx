@@ -11,7 +11,7 @@ import { Colors } from '../../styles';
 import Challenges from './components/Challenges';
 import Rewards from './components/Rewards';
 
-const userId = 1;
+const userId = 5;
 
 const Profile = () => {
   const [isVisible, setIsVisible] = useState(true);

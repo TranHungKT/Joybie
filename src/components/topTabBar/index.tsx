@@ -42,78 +42,80 @@ const MyTopTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
   }, [state.index, tabWidth, translateValue]);
 
   return (
-    <View style={styles.tabContainer}>
-      {state.routes.map((route, index) => {
-        const { options } = descriptors[route.key];
-        const label = options.tabBarLabel !== undefined
-          ? options.tabBarLabel.toString() : options.title || route.name;
+    <View style={styles.containerBgr}>
+      <View style={styles.tabContainer}>
+        {state.routes.map((route, index) => {
+          const { options } = descriptors[route.key];
+          const label = options.tabBarLabel !== undefined
+            ? options.tabBarLabel.toString() : options.title || route.name;
 
-        const isFocused = state.index === index;
+          const isFocused = state.index === index;
 
-        const onPress = () => {
-          const event = navigation.emit({
-            type: 'tabPress',
-            target: route.key,
-            canPreventDefault: true,
-          });
+          const onPress = () => {
+            const event = navigation.emit({
+              type: 'tabPress',
+              target: route.key,
+              canPreventDefault: true,
+            });
 
-          if (!isFocused && !event.defaultPrevented) {
-            navigation.navigate(route.name);
+            if (!isFocused && !event.defaultPrevented) {
+              navigation.navigate(route.name);
+            }
+          };
+
+          const onLongPress = () => {
+            navigation.emit({
+              type: 'tabLongPress',
+              target: route.key,
+            });
+          };
+
+          let tabLabel;
+          switch (label) {
+            case NavigatorConstants.Browse:
+              tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Browse</Text>;
+              break;
+            case NavigatorConstants.Watch:
+              tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Watch</Text>;
+              break;
+            case NavigatorConstants.Updates:
+              tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Updates</Text>;
+              break;
+            case NavigatorConstants.Messages:
+              tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Messages</Text>;
+              break;
+            default:
+              tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Browse</Text>;
+              break;
           }
-        };
 
-        const onLongPress = () => {
-          navigation.emit({
-            type: 'tabLongPress',
-            target: route.key,
-          });
-        };
-
-        let tabLabel;
-        switch (label) {
-          case NavigatorConstants.Browse:
-            tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Browse</Text>;
-            break;
-          case NavigatorConstants.Watch:
-            tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Watch</Text>;
-            break;
-          case NavigatorConstants.Updates:
-            tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Updates</Text>;
-            break;
-          case NavigatorConstants.Messages:
-            tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Messages</Text>;
-            break;
-          default:
-            tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Browse</Text>;
-            break;
-        }
-
-        return (
-          <TouchableOpacity
-            key={label}
-            accessibilityRole="button"
-            accessibilityState={isFocused ? { selected: true } : {}}
-            accessibilityLabel={options.tabBarAccessibilityLabel}
-            testID={options.tabBarTestID}
-            onPress={onPress}
-            onLongPress={onLongPress}
-            style={styles.touchableContainer}
-          >
-            <View style={styles.tabLabel}>
-              {tabLabel}
-            </View>
-          </TouchableOpacity>
-        );
-      })}
-      <Animated.View
-        style={[
-          styles.slider,
-          {
-            transform: [{ translateX: translateValue }],
-            width: tabWidth / 4,
-          },
-        ]}
-      />
+          return (
+            <TouchableOpacity
+              key={label}
+              accessibilityRole="button"
+              accessibilityState={isFocused ? { selected: true } : {}}
+              accessibilityLabel={options.tabBarAccessibilityLabel}
+              testID={options.tabBarTestID}
+              onPress={onPress}
+              onLongPress={onLongPress}
+              style={styles.touchableContainer}
+            >
+              <View style={styles.tabLabel}>
+                {tabLabel}
+              </View>
+            </TouchableOpacity>
+          );
+        })}
+        <Animated.View
+          style={[
+            styles.slider,
+            {
+              transform: [{ translateX: translateValue }],
+              width: tabWidth / 4,
+            },
+          ]}
+        />
+      </View>
     </View>
   );
 };
