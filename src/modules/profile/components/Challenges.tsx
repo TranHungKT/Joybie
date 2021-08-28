@@ -1,6 +1,7 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import {
-  View, Text, ScrollView, Image,
+  Text, ScrollView, Image,
 } from 'react-native';
 import styles from './styles';
 
@@ -18,10 +19,10 @@ const Challenges = (props: ChallengesProps) => {
     <>
       <Text style={styles.titleText}>Challenge Submissions</Text>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-        {entryList.map((entry) => {
+        {entryList.map((entry, index) => {
           const { imageUrl } = challenges[entry];
           return (
-            <Image source={{ uri: imageUrl }} style={styles.imageRewardSubmiss} />
+            <Image source={{ uri: imageUrl }} style={styles.imageRewardSubmiss} key={index} />
           );
         })}
       </ScrollView>
