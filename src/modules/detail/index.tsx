@@ -1,15 +1,17 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
+import { useRoute, RouteProp } from '@react-navigation/native';
 import { ScrollView } from 'react-native-gesture-handler';
+
+import { RootStackParams } from '../../routes/RoutesParams';
 import { useAppSelector } from '../../redux/HookRedux';
 import styles from './styles';
 
-interface IProps {
-  id: string;
-}
+type DetailScreenProps = RouteProp<RootStackParams, 'DetailScreen'>;
 
-const DetailScreen = (props: IProps) => {
-  const { id } = props;
+const DetailScreen = () => {
+  const route = useRoute<DetailScreenProps>();
+  const { id } = route.params;
   const { challenges } = useAppSelector((state) => state.challenges);
 
   const challengeIdx = challenges.findIndex((challenge) => challenge.id === id);

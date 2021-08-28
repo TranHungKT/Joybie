@@ -1,5 +1,4 @@
 import React from 'react';
-
 import FastImage from 'react-native-fast-image';
 import { useAppSelector } from '../../redux/HookRedux';
 
