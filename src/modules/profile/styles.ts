@@ -22,6 +22,7 @@ export default StyleSheet.create({
     fontWeight: 'bold',
     paddingLeft: 10,
     alignSelf: 'stretch',
+    fontFamily: 'Poppins-Medium',
   },
   content: {
     paddingTop: 20,

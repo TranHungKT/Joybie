@@ -50,10 +50,12 @@ export default StyleSheet.create({
     color: Colors.Purple,
     marginBottom: 5,
     fontWeight: 'bold',
+    fontFamily: 'Poppins-Medium',
   },
   use: {
     fontSize: 10,
     color: Colors.Pink,
+    fontFamily: 'Poppins-Medium',
   },
   imageRewardSubmiss: {
     width: 138,
