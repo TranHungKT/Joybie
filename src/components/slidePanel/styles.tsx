@@ -18,16 +18,16 @@ export default StyleSheet.create({
     flex: 0.3,
   },
   title: {
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Medium',
   },
   textInput: {
     borderWidth: 1,
     borderRadius: 30,
-    height: 34,
+    height: 27,
+    padding: 0,
     fontSize: 10,
-    paddingTop: 10,
     paddingLeft: 11,
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Medium',
     width: '100%',
   },
   socialView: {
@@ -57,17 +57,49 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   firstName: {
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Medium',
   },
-  buttonView: {
+  unsendButtonView: {
     backgroundColor: Colors.Purple,
     padding: 10,
     borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
   },
-  send: {
+  sendButtonView: {
+    backgroundColor: Colors.White,
+    padding: 10,
+    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
+  },
+  sentButtonView: {},
+  unsendButtonText: {
     color: Colors.White,
-    fontWeight: 'bold',
     fontSize: 10,
+    fontFamily: 'Poppins-Medium',
+  },
+  sendButtonText: {
+    color: Colors.Purple,
+    fontSize: 10,
+    fontFamily: 'Poppins-Medium',
+  },
+  sentButtonText: {
+    color: Colors.Purple,
+    fontSize: 10,
+    fontFamily: 'Poppins-Medium',
   },
   listView: {
     flex: 0.9,

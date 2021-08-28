@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
   textLabel: {
     fontSize: 16,
     lineHeight: 24,
+    fontFamily: 'Poppins-Medium',
   },
 });
 

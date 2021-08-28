@@ -11,4 +11,10 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   screen: { width: '100%', height: '100%', backgroundColor: White },
+  descriptionWrapper: { flexDirection: 'row', justifyContent: 'flex-start', marginTop: 10 },
+  descriptionTextWrapper: { flex: 3 },
+  brandText: { fontFamily: 'Poppins-Medium' },
+  numOfSaveText: { marginTop: 5, fontFamily: 'Poppins-Medium' },
+  dotdotdotWrapper: { flex: 1 },
+  dotdotdot: { alignSelf: 'flex-end' },
 });

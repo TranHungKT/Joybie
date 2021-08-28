@@ -32,7 +32,15 @@ const SplashScreen = () => {
 
   useEffect(() => {
     if (rewards.length !== 0) {
-      navigation.navigate({ name: 'BottomTabRoute', key: 'Home' });
+      navigation.reset({
+        index: 0,
+        routes: [
+          {
+            name: 'BottomTabRoute',
+            key: 'Home',
+          },
+        ],
+      });
     }
   }, [rewards]);
 

@@ -5,7 +5,7 @@ export const TabMenu = 'TabMenu';
 export const Home = 'Home';
 export const Search = 'Search';
 export const Social = 'Social';
-export const Profile = 'Profile';
+export const Profile = 'ProfileRoute';
 
 // Home Tab Bar Routes
 export const Browse = 'Browse';
