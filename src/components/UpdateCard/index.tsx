@@ -35,7 +35,7 @@ const UpdateCard = (props: IUpdateCardProps) => {
   return (
     <View style={userRelation ? styles.userRelationCard : styles.normalCard}>
       <View style={styles.descriptionWrapper}>
-        <Image style={styles.avatar} source={{ uri: users[userIdx].avatar }} />
+        <Image style={styles.avatar} source={{ uri: users[userIdx].avatar }} resizeMode="cover" />
         <View style={styles.descriptionTextWrapper}>
           <Text style={styles.descriptionText}>
             {userRelation

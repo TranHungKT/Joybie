@@ -10,7 +10,9 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  screen: { width: '100%', height: '100%', backgroundColor: White },
+  screen: {
+    paddingTop: 20, width: '100%', height: '100%', backgroundColor: White,
+  },
   scrollView: { marginHorizontal: 30 },
   wrapper: {
     flex: 1, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center',
@@ -35,8 +37,8 @@ export default StyleSheet.create({
   textWrapper: { flex: 1, flexDirection: 'row' },
   textContainer: { flex: 1, alignItems: 'flex-start' },
   titleText: { fontSize: 24, fontWeight: 'bold', marginTop: 5 },
-  numOfDoneText: { color: Purple },
-  descriptionText: { marginTop: 10 },
+  numOfDoneText: { color: Purple, fontFamily: 'Poppins-Medium' },
+  descriptionText: { marginTop: 10, fontFamily: 'Poppins-Medium' },
   buttonWrapper: { flex: 1, flexDirection: 'row', marginTop: 20 },
   joinChallenge: {
     alignSelf: 'flex-start',
@@ -55,7 +57,7 @@ export default StyleSheet.create({
     shadowRadius: 2.22,
     elevation: 3,
   },
-  buttonText: { fontWeight: 'bold', color: White },
+  buttonText: { fontFamily: 'Poppins-Medium', color: White },
   share: {
     alignSelf: 'flex-end',
     width: 60,

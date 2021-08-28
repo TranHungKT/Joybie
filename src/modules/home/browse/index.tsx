@@ -2,7 +2,7 @@ import MasonryList from '@react-native-seoul/masonry-list';
 import { useNavigation, NavigationProp } from '@react-navigation/native';
 import React from 'react';
 import {
-  SafeAreaView, Text, TouchableOpacity, View,
+  SafeAreaView, StatusBar, Text, TouchableOpacity, View,
 } from 'react-native';
 import DotDotDot from '../../../assets/svg/DotDotDot';
 import ImageCard from '../../../components/ImageCard';
@@ -84,6 +84,7 @@ const Browse = () => {
 
   return (
     <SafeAreaView style={styles.centerContainer}>
+      <StatusBar hidden />
       <View style={styles.screen}>
         <MasonryList
           horizontal={false}
