@@ -4,6 +4,7 @@ import SearchIcon from './svg/SearchIcon';
 import SocialIcon from './svg/SocialIcon';
 import ProfileIcon from './svg/ProfileIcon';
 import CloseIcon from './svg/CloseIcon';
+import PlayButton from './svg/PlayButton';
 
 export {
   HomeIcon,
@@ -11,4 +12,5 @@ export {
   SocialIcon,
   ProfileIcon,
   CloseIcon,
+  PlayButton,
 };
