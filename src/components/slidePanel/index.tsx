@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   Dimensions, Text, TextInput, TouchableOpacity, View, FlatList, ListRenderItemInfo, Image,
 } from 'react-native';
@@ -20,21 +20,68 @@ interface SlidePanelProps {
 
 const keyExtractor = (item: IGetUsersSuccessPayload) => item.id;
 
+type SendState = 'unsend' | 'send' | 'sent';
+
+const ShareButton = () => {
+  const [sendState, setSendState] = useState<SendState>('unsend');
+
+  const onPressHandler = () => {
+    if (sendState === 'unsend') {
+      setSendState('send');
+      setTimeout(() => setSendState('sent'), 2000);
+    }
+  };
+
+  const getButtonViewStyle = () => {
+    if (sendState === 'unsend') {
+      return styles.unsendButtonView;
+    }
+    if (sendState === 'send') {
+      return styles.sendButtonView;
+    }
+    return styles.sentButtonView;
+  };
+
+  const getButtonTextStyle = () => {
+    if (sendState === 'unsend') {
+      return styles.unsendButtonText;
+    }
+    if (sendState === 'send') {
+      return styles.sendButtonText;
+    }
+    return styles.sentButtonText;
+  };
+
+  const getText = () => {
+    if (sendState === 'unsend') {
+      return 'Send';
+    }
+    if (sendState === 'send') {
+      return 'Sent';
+    }
+    return 'View Chat >';
+  };
+  return (
+    <TouchableOpacity style={getButtonViewStyle()} onPress={onPressHandler}>
+      <Text style={getButtonTextStyle()}>{getText()}</Text>
+    </TouchableOpacity>
+  );
+};
+
 const SlidePanel = (props: SlidePanelProps) => {
   const { refPanel } = props;
   const { users } = useAppSelector((state) => state.users);
 
   const renderItem = ({ item, index }: ListRenderItemInfo<IGetUsersSuccessPayload>) => {
     const { firstName } = item;
+
     return (
       <View key={index} style={styles.nameView}>
         <View style={styles.rowView}>
           <FastImage source={{ uri: item.avatar }} style={styles.image} />
           <Text style={styles.firstName}>{firstName}</Text>
         </View>
-        <TouchableOpacity style={styles.buttonView}>
-          <Text style={styles.send}>Send</Text>
-        </TouchableOpacity>
+        <ShareButton />
       </View>
     );
   };

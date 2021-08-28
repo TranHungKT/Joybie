@@ -25,7 +25,7 @@ const DetailScreen = () => {
   const showPanel = () => refPanel.current?.show();
   return (
     <>
-      <ScrollView style={styles.scrollView}>
+      <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
         <View style={styles.wrapper}>
           <Image
             style={styles.image}

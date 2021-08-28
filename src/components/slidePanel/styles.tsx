@@ -59,13 +59,45 @@ export default StyleSheet.create({
   firstName: {
     fontWeight: 'bold',
   },
-  buttonView: {
+  unsendButtonView: {
     backgroundColor: Colors.Purple,
     padding: 10,
     borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
   },
-  send: {
+  sendButtonView: {
+    backgroundColor: Colors.White,
+    padding: 10,
+    borderRadius: 20,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
+  },
+  sentButtonView: {},
+  unsendButtonText: {
     color: Colors.White,
+    fontWeight: 'bold',
+    fontSize: 10,
+  },
+  sendButtonText: {
+    color: Colors.Purple,
+    fontWeight: 'bold',
+    fontSize: 10,
+  },
+  sentButtonText: {
+    color: Colors.Purple,
     fontWeight: 'bold',
     fontSize: 10,
   },

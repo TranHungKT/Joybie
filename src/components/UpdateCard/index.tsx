@@ -1,8 +1,15 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import {
+  Text, View, Image, TouchableOpacity,
+} from 'react-native';
 
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { useAppSelector } from '../../redux/HookRedux';
 import styles from './styles';
+
+import { NavigatorConstants } from '../../constants';
+
+import { RootStackParams } from '../../routes/RoutesParams';
 
 interface IUpdateCardProps {
   userId: string,
@@ -18,6 +25,11 @@ const UpdateCard = (props: IUpdateCardProps) => {
   const userIdx = users.findIndex((user) => user.id === userId);
   const challengeIdx = users.findIndex((challenge) => challenge.id === challengeId);
 
+  const navigation = useNavigation<NavigationProp<RootStackParams>>();
+  const navigateToChallengeDetail = (id: string) => () => {
+    navigation.navigate(NavigatorConstants.DetailScreen, { id });
+  };
+
   return (
     <View style={userRelation ? styles.userRelationCard : styles.normalCard}>
       <View style={styles.descriptionWrapper}>
@@ -31,9 +43,9 @@ const UpdateCard = (props: IUpdateCardProps) => {
         </View>
       </View>
       <View style={styles.buttonWrapper}>
-        <View style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={navigateToChallengeDetail(challengeId)}>
           <Text style={styles.buttonText}>{userRelation ? 'Send Message' : 'Challenge Details'}</Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
