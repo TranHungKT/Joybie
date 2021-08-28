@@ -37,6 +37,8 @@ interface Item {
   name: string
 }
 
+const keyExtractor = (item:Item) => item.name;
+
 const Social = () => {
   const renderItem = ({ item, index }: ListRenderItemInfo<Item>) => (
     <View key={index}>
@@ -49,7 +51,7 @@ const Social = () => {
       data={data}
       renderItem={renderItem}
       horizontal
-      keyExtractor={({ index }: any) => index}
+      keyExtractor={keyExtractor}
       showsHorizontalScrollIndicator={false}
     />
   );
