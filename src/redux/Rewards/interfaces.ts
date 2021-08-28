@@ -16,6 +16,7 @@ export interface IGetRewardsSuccessPayload {
   code: string
   validTill: string
   id: string
+  imageUrl: string
 }
 export interface IGetRewardsErrorPayload {
   error: string
