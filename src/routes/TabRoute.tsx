@@ -19,6 +19,7 @@ const TabRoute = () => (
       tabBarShowLabel: true,
       tabBarActiveTintColor: Colors.Purple, // active icon color
       tabBarInactiveTintColor: Colors.Black, // inactive icon color
+      headerShown: false,
     }}
     tabBar={(props) => <MyTabBar {...props} />}
   >
