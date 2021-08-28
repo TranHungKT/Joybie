@@ -7,6 +7,7 @@ import store from '../redux/Store';
 import BottomTabRoute from './BottomTabRoute';
 import { RootStackParams } from './RoutesParams';
 import SplashScreen from '../modules/splash';
+import DetailScreen from '../modules/detail';
 
 const Stack = createStackNavigator<RootStackParams>();
 
@@ -17,6 +18,10 @@ function AppRoute() {
         <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Splash">
           <Stack.Screen name="Splash" component={SplashScreen} />
           <Stack.Screen name="BottomTabRoute" component={BottomTabRoute} />
+          <Stack.Screen
+            name="DetailScreen"
+            component={DetailScreen}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

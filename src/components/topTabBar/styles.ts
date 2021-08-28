@@ -3,17 +3,15 @@ import { Colors } from '../../styles/index';
 
 const styles = StyleSheet.create({
   tabContainer: {
-    position: 'absolute',
-    top: 22,
+    marginTop: 12,
+    marginBottom: 12,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    height: 56,
-    backgroundColor: Colors.White,
-    borderColor: Colors.Purple,
+    height: 46,
     width: Dimensions.get('window').width / 1.75,
-
+    fontSize: 16,
     elevation: 1,
   },
   slider: {
@@ -34,6 +32,10 @@ const styles = StyleSheet.create({
   },
   tabLabel: {
     justifyContent: 'center',
+  },
+  textLabel: {
+    fontSize: 16,
+    lineHeight: 24,
   },
 });
 

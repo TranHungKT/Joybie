@@ -2,8 +2,8 @@ import React from 'react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 import { MyTopTabBar } from '@components/index';
-import Browse from '@modules/home/browse';
 import Watch from '@modules/home/watch';
+import Browse from '@modules/home/browse';
 import { NavigatorConstants } from '../constants/index';
 import { Colors } from '../styles/index';
 

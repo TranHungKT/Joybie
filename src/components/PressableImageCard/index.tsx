@@ -1,7 +1,4 @@
 import React from 'react';
-
-import { Pressable } from 'react-native';
-
 import FastImage from 'react-native-fast-image';
 import { useAppSelector } from '../../redux/HookRedux';
 
@@ -15,17 +12,14 @@ const PressableImageCard = (props: IImageProps) => {
   const { challenges } = useAppSelector((state) => state.challenges);
 
   const challengeIdx = challenges.findIndex((challenge) => challenge.id === id);
-  const onPressHandler = () => {};
 
   return (
     <>
       {(challengeIdx !== -1) && (
-      <Pressable onPress={onPressHandler}>
         <FastImage
           style={style}
           source={{ uri: challenges[challengeIdx].imageUrl, priority: FastImage.priority.normal }}
         />
-      </Pressable>
       )}
     </>
   );
