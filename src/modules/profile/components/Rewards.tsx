@@ -4,7 +4,9 @@ import {
   TouchableOpacity,
 
 } from 'react-native';
-import { } from 'react-native-gesture-handler';
+import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { ProfileRouteParams } from '../../../routes/RoutesParams';
 import styles from './styles';
 
 import { useAppSelector } from '../../../redux/HookRedux';
@@ -13,12 +15,17 @@ interface RewardsProps {
   userId: number
 }
 
+type NavigationProp = NativeStackNavigationProp<ProfileRouteParams, 'Profile'>;
+
 const Rewards = (props : RewardsProps) => {
+  const navigation = useNavigation<NavigationProp>();
   const { userId } = props;
 
   const rewardList = useAppSelector((state) => state.rewards.rewards);
 
   const { reward } = useAppSelector((state) => state.users.users[userId]);
+
+  const navigateToRedeem = (id: number) => () => navigation.navigate('RedeemScreen', { id });
 
   return (
     <>
@@ -37,7 +44,7 @@ const Rewards = (props : RewardsProps) => {
                   {validTill}
                 </Text>
               </View>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={navigateToRedeem(element)}>
                 <Text style={styles.use}>
                   Use
                   {' '}

@@ -2,7 +2,12 @@ export type BottomTabRouteParams = {
   Home: undefined;
   Search: undefined;
   Social: undefined;
-  Profile: undefined;
+  ProfileRoute: ProfileRouteParams;
+};
+
+export type ProfileRouteParams = {
+  Profile: undefined
+  RedeemScreen: { id: number }
 };
 
 export type RootStackParams = {
