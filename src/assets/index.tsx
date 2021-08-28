@@ -6,6 +6,7 @@ import ProfileIcon from './svg/ProfileIcon';
 import CloseIcon from './svg/CloseIcon';
 import BackIcon from './svg/BackIcon';
 import DotDotDot from './svg/DotDotDot';
+import PlayButton from './svg/PlayButton';
 
 export {
   HomeIcon,
@@ -15,4 +16,5 @@ export {
   CloseIcon,
   BackIcon,
   DotDotDot,
+  PlayButton,
 };
