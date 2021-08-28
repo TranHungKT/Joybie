@@ -25,7 +25,7 @@ export default StyleSheet.create({
   titleText: {
     fontSize: 16,
     marginTop: 10,
-    marginBottom: 10,
+    // marginBottom: 10,
     fontFamily: 'Poppins-Medium',
   },
   rewardView: {
@@ -50,10 +50,12 @@ export default StyleSheet.create({
     color: Colors.Purple,
     marginBottom: 5,
     fontWeight: 'bold',
+    fontFamily: 'Poppins-Medium',
   },
   use: {
     fontSize: 10,
     color: Colors.Pink,
+    fontFamily: 'Poppins-Medium',
   },
   imageRewardSubmiss: {
     width: 138,

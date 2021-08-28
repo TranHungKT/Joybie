@@ -47,7 +47,7 @@ export default StyleSheet.create({
   },
   buttonText: {
     fontSize: 14,
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Medium',
     color: Colors.White,
   },
 });

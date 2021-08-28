@@ -18,16 +18,16 @@ export default StyleSheet.create({
     flex: 0.3,
   },
   title: {
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Medium',
   },
   textInput: {
     borderWidth: 1,
     borderRadius: 30,
-    height: 34,
+    height: 27,
+    padding: 0,
     fontSize: 10,
-    paddingTop: 10,
     paddingLeft: 11,
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Medium',
     width: '100%',
   },
   socialView: {
@@ -57,7 +57,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   firstName: {
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Medium',
   },
   unsendButtonView: {
     backgroundColor: Colors.Purple,
@@ -88,18 +88,18 @@ export default StyleSheet.create({
   sentButtonView: {},
   unsendButtonText: {
     color: Colors.White,
-    fontWeight: 'bold',
     fontSize: 10,
+    fontFamily: 'Poppins-Medium',
   },
   sendButtonText: {
     color: Colors.Purple,
-    fontWeight: 'bold',
     fontSize: 10,
+    fontFamily: 'Poppins-Medium',
   },
   sentButtonText: {
     color: Colors.Purple,
-    fontWeight: 'bold',
     fontSize: 10,
+    fontFamily: 'Poppins-Medium',
   },
   listView: {
     flex: 0.9,

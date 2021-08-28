@@ -38,7 +38,7 @@ const Rewards = (props : RewardsProps) => {
               <Image source={{ uri: imageUrl }} style={styles.imageReward} resizeMode="contain" />
               <View style={styles.titleView}>
                 <Text style={styles.title}>{title}</Text>
-                <Text>
+                <Text style={{ fontFamily: 'Poppins-Medium' }}>
                   Valid Till
                   {' '}
                   {validTill}

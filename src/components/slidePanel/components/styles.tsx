@@ -11,6 +11,6 @@ export default StyleSheet.create({
     fontSize: 10,
     textAlign: 'center',
     marginTop: 5,
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Medium',
   },
 });

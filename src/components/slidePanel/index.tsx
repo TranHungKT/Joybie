@@ -101,7 +101,6 @@ const SlidePanel = (props: SlidePanelProps) => {
           <View style={styles.header}>
             <View style={styles.closeIcon}>
               <CloseIcon onPress={() => refPanel.current?.hide()} />
-
             </View>
             <Text style={styles.title}>Share Challenge</Text>
             <View style={styles.closeIcon} />

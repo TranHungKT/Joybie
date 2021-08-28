@@ -25,16 +25,19 @@ export default StyleSheet.create({
     textAlign: 'center',
     marginTop: 20,
     fontSize: 16,
+    fontFamily: 'Poppins-Medium',
   },
   noti: {
     textAlign: 'center',
     paddingHorizontal: 30,
     fontSize: 16,
+    fontFamily: 'Poppins-Medium',
   },
   voucher: {
     textAlign: 'center',
     marginTop: 20,
     paddingHorizontal: 30,
     fontSize: 16,
+    fontFamily: 'Poppins-Medium',
   },
 });
