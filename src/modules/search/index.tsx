@@ -1,5 +1,5 @@
 /* eslint-disable global-require */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Image,
   Keyboard,
@@ -10,6 +10,8 @@ import {
   View,
   ImageSourcePropType,
   ImageBackground,
+  NativeSyntheticEvent,
+  TextInputChangeEventData,
 } from 'react-native';
 import MasonryList from '@react-native-seoul/masonry-list';
 import { Black } from '../../styles/colors';
@@ -22,7 +24,7 @@ interface Item {
 }
 
 const Search = () => {
-  const data: Item[] = [
+  const dataList: Item[] = [
     {
       image: require('../../assets/image/Search_Cooking.jpg'),
       name: 'Cooking',
@@ -52,6 +54,15 @@ const Search = () => {
       name: 'Wellness',
     },
   ];
+
+  const [data, setData] = useState<Item[]>(dataList);
+  const [input, setInput] = useState('');
+
+  useEffect(() => {
+    const result: Item[] = dataList.filter((value) => value.name.toLowerCase().includes(input.toLowerCase()));
+    setData(result);
+  }, [input]);
+
   return (
     <SafeAreaView style={styles.centerContainer}>
       <View style={styles.screen}>
@@ -64,6 +75,8 @@ const Search = () => {
               <TextInput
                 style={styles.input}
                 placeholder="Search"
+                value={input}
+                onChangeText={setInput}
               />
             </View>
             <Text style={styles.headingText}>Browse By Category</Text>
