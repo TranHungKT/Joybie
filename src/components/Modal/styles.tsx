@@ -29,7 +29,7 @@ export default StyleSheet.create({
   },
   noti: {
     textAlign: 'center',
-    paddingHorizontal: 30,
+    paddingHorizontal: 20,
     fontSize: 16,
     fontFamily: 'Poppins-Medium',
   },
