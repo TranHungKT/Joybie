@@ -4,6 +4,7 @@ import { Colors } from '../../styles';
 export default StyleSheet.create({
   centerContainer: {
     flex: 1,
+    backgroundColor: Colors.White,
   },
   textInputView: {
     flex: 0.1,
