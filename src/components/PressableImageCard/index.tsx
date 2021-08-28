@@ -1,8 +1,6 @@
 import React from 'react';
 
-import {
-  ImageStyle, Pressable, Image, StyleProp,
-} from 'react-native';
+import { Pressable } from 'react-native';
 
 import FastImage from 'react-native-fast-image';
 import { useAppSelector } from '../../redux/HookRedux';
@@ -12,7 +10,7 @@ interface IImageProps {
   style: any;
 }
 
-const ImageCard = (props: IImageProps) => {
+const PressableImageCard = (props: IImageProps) => {
   const { id, style } = props;
   const { challenges } = useAppSelector((state) => state.challenges);
 
@@ -33,4 +31,4 @@ const ImageCard = (props: IImageProps) => {
   );
 };
 
-export default ImageCard;
+export default PressableImageCard;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import BrowseScreen from './browseScreen';
+import BrowseScreen from './browse/screen';
 
 import styles from './styles';
 

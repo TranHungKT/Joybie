@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import MasonryList from '@react-native-seoul/masonry-list';
-import ImageCard from '../../../components/Common/Image';
-import { useAppSelector } from '../../../redux/HookRedux';
-import DotDotDot from '../../../assets/svg/DotDotDot';
+import ImageCard from '../../../../components/PressableImageCard';
+import { useAppSelector } from '../../../../redux/HookRedux';
+import DotDotDot from '../../../../assets/svg/DotDotDot';
 import styles from './styles';
 
 type HeightType = 'short' | 'long';

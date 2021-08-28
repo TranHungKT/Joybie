@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
-import { Purple, White } from '../../styles/colors';
 import { useAppSelector } from '../../redux/HookRedux';
 import styles from './styles';
 
