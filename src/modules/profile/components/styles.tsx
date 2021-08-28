@@ -13,18 +13,20 @@ export default StyleSheet.create({
   },
   name: {
     fontSize: 32,
+    fontFamily: 'Poppins-Medium',
   },
   rowView: {
     flexDirection: 'row',
   },
   text: {
     fontSize: 12,
-
+    fontFamily: 'Poppins-Medium',
   },
   titleText: {
     fontSize: 16,
     marginTop: 10,
     marginBottom: 10,
+    fontFamily: 'Poppins-Medium',
   },
   rewardView: {
     justifyContent: 'space-between',
