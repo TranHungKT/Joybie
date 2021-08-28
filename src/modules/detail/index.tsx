@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import {
   SafeAreaView, View,
-  Image, Text, ScrollView, TouchableOpacity,
+  Image, Text, ScrollView, TouchableOpacity, StatusBar,
 } from 'react-native';
 
 import { useRoute, RouteProp } from '@react-navigation/native';
@@ -10,7 +10,7 @@ import SlidingUpPanel from 'rn-sliding-up-panel';
 import { RootStackParams } from '../../routes/RoutesParams';
 import { useAppSelector } from '../../redux/HookRedux';
 import styles from './styles';
-
+import Header from './component/Header';
 import { SlidePanel } from '../../components';
 
 type DetailScreenProps = RouteProp<RootStackParams, 'DetailScreen'>;
@@ -27,8 +27,10 @@ const Detail = () => {
   const showPanel = () => refPanel.current?.show();
   return (
     <SafeAreaView style={styles.centerContainer}>
+      <StatusBar hidden />
       <View style={styles.screen}>
         <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
+          <Header />
           <View style={styles.wrapper}>
             <Image
               style={styles.image}

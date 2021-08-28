@@ -10,7 +10,9 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  screen: { width: '100%', height: '100%', backgroundColor: White },
+  screen: {
+    paddingTop: 20, width: '100%', height: '100%', backgroundColor: White,
+  },
   scrollView: { marginHorizontal: 30 },
   wrapper: {
     flex: 1, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center',
