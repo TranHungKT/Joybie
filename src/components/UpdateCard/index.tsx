@@ -26,8 +26,10 @@ const UpdateCard = (props: IUpdateCardProps) => {
   const challengeIdx = users.findIndex((challenge) => challenge.id === challengeId);
 
   const navigation = useNavigation<NavigationProp<RootStackParams>>();
-  const navigateToChallengeDetail = (id: string) => () => {
-    navigation.navigate(NavigatorConstants.DetailScreen, { id });
+  const navigateToChallengeDetail = () => () => {
+    if (!userRelation) {
+      navigation.navigate(NavigatorConstants.DetailScreen, { id: challengeId });
+    }
   };
 
   return (
@@ -43,7 +45,7 @@ const UpdateCard = (props: IUpdateCardProps) => {
         </View>
       </View>
       <View style={styles.buttonWrapper}>
-        <TouchableOpacity style={styles.button} onPress={navigateToChallengeDetail(challengeId)}>
+        <TouchableOpacity style={styles.button} onPress={navigateToChallengeDetail()}>
           <Text style={styles.buttonText}>{userRelation ? 'Send Message' : 'Challenge Details'}</Text>
         </TouchableOpacity>
       </View>
