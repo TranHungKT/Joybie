@@ -35,6 +35,10 @@ const styles = StyleSheet.create({
   tabLabel: {
     justifyContent: 'center',
   },
+  textLabel: {
+    fontSize: 16,
+    lineHeight: 24,
+  },
 });
 
 export default styles;
