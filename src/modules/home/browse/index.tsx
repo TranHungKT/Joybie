@@ -1,11 +1,13 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import BrowseScreen from './screen';
 import styles from './styles';
 
 const Browse = () => (
   <SafeAreaView style={styles.centerContainer}>
-    <BrowseScreen />
+    <View style={styles.screen}>
+      <BrowseScreen />
+    </View>
   </SafeAreaView>
 );
 

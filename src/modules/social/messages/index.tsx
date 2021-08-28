@@ -2,12 +2,15 @@ import React from 'react';
 import {
   SafeAreaView,
   Text,
+  View,
 } from 'react-native';
 import styles from './styles';
 
 const Messages = () => (
   <SafeAreaView style={styles.centerContainer}>
-    <Text>Messages</Text>
+    <View style={styles.screen}>
+      <Text>Messages</Text>
+    </View>
   </SafeAreaView>
 );
 

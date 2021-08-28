@@ -1,11 +1,13 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
+import { SafeAreaView, View } from 'react-native';
 import UpdateScreen from './screen';
 import styles from './styles';
 
 const Updates = () => (
   <SafeAreaView style={styles.centerContainer}>
-    <UpdateScreen />
+    <View style={styles.screen}>
+      <UpdateScreen />
+    </View>
   </SafeAreaView>
 );
 
