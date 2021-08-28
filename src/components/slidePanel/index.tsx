@@ -14,9 +14,12 @@ import { IGetUsersSuccessPayload } from '../../redux/User/interfaces';
 
 const { height } = Dimensions.get('window');
 
-const SlidePanel = () => {
-  const refPanel = useRef<SlidingUpPanel>(null);
+interface SlidePanelProps {
+  refPanel: React.RefObject<SlidingUpPanel>
+}
 
+const SlidePanel = (props: SlidePanelProps) => {
+  const { refPanel } = props;
   const { users } = useAppSelector((state) => state.users);
 
   const renderItem = ({ item, index }: ListRenderItemInfo<IGetUsersSuccessPayload>) => {
@@ -36,11 +39,10 @@ const SlidePanel = () => {
 
   return (
     <>
-      <TouchableOpacity onPress={() => refPanel.current?.show()}><Text>Heelo</Text></TouchableOpacity>
       <SlidingUpPanel
         ref={refPanel}
         draggableRange={{
-          top: height * (3 / 4),
+          top: height * (2.5 / 4),
           bottom: 0,
         }}
         containerStyle={styles.slideStyle}

@@ -1,11 +1,15 @@
-import React from 'react';
-import { Image, Text, View } from 'react-native';
+import React, { useRef } from 'react';
+import {
+  Image, Text, View, ScrollView, TouchableOpacity,
+} from 'react-native';
 import { useRoute, RouteProp } from '@react-navigation/native';
-import { ScrollView } from 'react-native-gesture-handler';
 
+import SlidingUpPanel from 'rn-sliding-up-panel';
 import { RootStackParams } from '../../routes/RoutesParams';
 import { useAppSelector } from '../../redux/HookRedux';
 import styles from './styles';
+
+import { SlidePanel } from '../../components';
 
 type DetailScreenProps = RouteProp<RootStackParams, 'DetailScreen'>;
 
@@ -15,6 +19,10 @@ const DetailScreen = () => {
   const { challenges } = useAppSelector((state) => state.challenges);
 
   const challengeIdx = challenges.findIndex((challenge) => challenge.id === id);
+
+  const refPanel = useRef<SlidingUpPanel>(null);
+
+  const showPanel = () => refPanel.current?.show();
 
   return (
     <View style={styles.screen}>
@@ -41,13 +49,15 @@ const DetailScreen = () => {
               </View>
             </View>
             <View style={{ flex: 1 }}>
-              <View style={styles.share}>
+              <TouchableOpacity style={styles.share} onPress={showPanel}>
                 <Text style={styles.buttonText}>Share</Text>
-              </View>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
+
       </ScrollView>
+      <SlidePanel refPanel={refPanel} />
     </View>
   );
 };
