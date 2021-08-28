@@ -34,6 +34,7 @@ const UpdateScreen = () => {
 
   return (
     <FlatList
+      style={{ marginTop: 10 }}
       horizontal={false}
       showsVerticalScrollIndicator={false}
       data={propList}
