@@ -1,13 +1,12 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import BrowseScreen from './browse/screen';
-
+import UpdateScreen from './screen';
 import styles from './styles';
 
-const Home = () => (
+const Updates = () => (
   <SafeAreaView style={styles.centerContainer}>
-    <BrowseScreen />
+    <UpdateScreen />
   </SafeAreaView>
 );
 
-export default Home;
+export default Updates;

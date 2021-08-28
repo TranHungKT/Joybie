@@ -2,18 +2,18 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { MyTabBar } from '@components/index';
-import Home from '@modules/home';
 import Search from '@modules/search';
-import Social from '@modules/social';
 import Profile from '@modules/profile';
 import { NavigatorConstants } from '../constants/index';
 import { Colors } from '../styles/index';
 
-import { TabRouteParams } from './RoutesParams';
+import { BottomTabRouteParams } from './RoutesParams';
+import HomeTopTabBar from './HomeTopTabRoute';
+import SocialTopTabBar from './SocialTopTabRoute';
 
-const TabNavigator = createBottomTabNavigator<TabRouteParams>();
+const TabNavigator = createBottomTabNavigator<BottomTabRouteParams>();
 
-const TabRoute = () => (
+const BottomTabRoute = () => (
   <TabNavigator.Navigator
     screenOptions={{
       tabBarShowLabel: true,
@@ -25,7 +25,7 @@ const TabRoute = () => (
   >
     <TabNavigator.Screen
       name={NavigatorConstants.Home}
-      component={Home}
+      component={HomeTopTabBar}
     />
     <TabNavigator.Screen
       name={NavigatorConstants.Search}
@@ -33,7 +33,7 @@ const TabRoute = () => (
     />
     <TabNavigator.Screen
       name={NavigatorConstants.Social}
-      component={Social}
+      component={SocialTopTabBar}
     />
     <TabNavigator.Screen
       name={NavigatorConstants.Profile}
@@ -42,4 +42,4 @@ const TabRoute = () => (
   </TabNavigator.Navigator>
 );
 
-export default TabRoute;
+export default BottomTabRoute;
