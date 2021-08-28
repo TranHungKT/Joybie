@@ -37,16 +37,32 @@ export default StyleSheet.create({
     backgroundColor: Purple,
     alignItems: 'center',
     justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
   },
   buttonText: { fontWeight: 'bold', color: White },
   share: {
     alignSelf: 'flex-end',
-    width: 120,
+    width: 60,
     height: 40,
     borderRadius: 32,
     backgroundColor: Purple,
     alignItems: 'center',
     justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+    elevation: 3,
   },
 
 });

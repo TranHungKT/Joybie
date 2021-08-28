@@ -9,26 +9,17 @@ const UpdateScreen = () => {
 
   const propList = [
     {
-      userId: users[0].id,
-      challengeId: challenges[0].id,
+      userId: users[2].id,
+      challengeId: challenges[3].id,
       userRelation: true,
     },
     {
       userId: users[1].id,
-      challengeId: challenges[4].id,
-    },
-    {
-      userId: users[3].id,
-      challengeId: challenges[6].id,
+      challengeId: challenges[5].id,
     },
     {
       userId: users[0].id,
-      challengeId: challenges[2].id,
-      userRelation: true,
-    },
-    {
-      userId: users[2].id,
-      challengeId: challenges[1].id,
+      challengeId: challenges[0].id,
     },
   ];
 
