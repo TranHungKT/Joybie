@@ -1,17 +1,49 @@
 import { StyleSheet } from 'react-native';
-import { Purple, Pink } from '../../styles/colors';
+import { Purple, Pink, White } from '../../styles/colors';
 
 export default StyleSheet.create({
   normalCard: {
-    width: 380, height: 150, backgroundColor: Purple, borderRadius: 32,
+    height: 150,
+    backgroundColor: Purple,
+    borderRadius: 32,
+    marginBottom: 20,
+    marginHorizontal: 20,
   },
   userRelationCard: {
-    width: 380, height: 150, backgroundColor: Pink, borderRadius: 32,
+    height: 150,
+    backgroundColor: Pink,
+    borderRadius: 32,
+    marginBottom: 20,
+    marginHorizontal: 20,
   },
   descriptionWrapper: {
-    flexDirection: 'row', marginBottom: 5, marginHorizontal: 20, marginTop: 20,
+    flexDirection: 'row',
+    marginBottom: 5,
+    marginLeft: 30,
+    marginTop: 30,
+    marginRight: 50,
   },
   avatar: {
-    width: 50, height: 50, borderRadius: 100,
+    width: 50,
+    height: 50,
+    borderRadius: 100,
+  },
+  descriptionTextWrapper: { flex: 1, marginLeft: 20 },
+  descriptionText: { color: White, fontSize: 16 },
+  button: {
+    width: 120,
+    height: 40,
+    borderRadius: 32,
+    backgroundColor: White,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  buttonText: { fontWeight: 'bold' },
+  buttonWrapper: {
+    flex: 1,
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    marginBottom: 10,
+    marginRight: 20,
   },
 });
