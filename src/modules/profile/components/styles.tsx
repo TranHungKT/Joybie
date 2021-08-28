@@ -25,7 +25,7 @@ export default StyleSheet.create({
   titleText: {
     fontSize: 16,
     marginTop: 10,
-    marginBottom: 10,
+    // marginBottom: 10,
     fontFamily: 'Poppins-Medium',
   },
   rewardView: {

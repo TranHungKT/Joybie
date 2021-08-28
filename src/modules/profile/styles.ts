@@ -25,7 +25,7 @@ export default StyleSheet.create({
     fontFamily: 'Poppins-Medium',
   },
   content: {
-    paddingTop: 20,
+    paddingTop: 10,
     paddingHorizontal: 20,
   },
 });
