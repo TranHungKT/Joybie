@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
 import { Colors } from '../../../styles';
-import { Purple } from '../../../styles/colors';
 
 export default StyleSheet.create({
   container: {
@@ -14,7 +13,7 @@ export default StyleSheet.create({
   screen: {
     width: '100%',
     height: '100%',
-    backgroundColor: Purple,
+    backgroundColor: Colors.Purple,
   },
   textLabel: {
     fontSize: 20,

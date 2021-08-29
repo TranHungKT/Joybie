@@ -31,6 +31,12 @@ const MyTopTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
   const totalWidth = Dimensions.get('window').width;
   const tabWidth = totalWidth / state.routes.length;
 
+  const [colors, setColors] = useState({
+    bgr: Colors.White,
+    text: Colors.Black,
+    slide: Colors.Purple,
+  });
+
   useEffect(() => {
     Animated.spring(translateValue, {
       toValue: state.index * (tabWidth / 1.75),
@@ -39,11 +45,25 @@ const MyTopTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
       bounciness: 4,
       useNativeDriver: true,
     }).start();
+
+    if (state.routes[state.index].name === 'Watch') {
+      setColors({
+        bgr: Colors.Purple,
+        text: Colors.White,
+        slide: Colors.White,
+      });
+    } else {
+      setColors({
+        bgr: Colors.White,
+        text: Colors.Black,
+        slide: Colors.Purple,
+      });
+    }
   }, [state.index, tabWidth, translateValue]);
 
   return (
-    <View style={styles.containerBgr}>
-      <View style={styles.tabContainer}>
+    <View style={{ backgroundColor: colors.bgr }}>
+      <View style={{ backgroundColor: colors.bgr, ...styles.tabContainer }}>
         {state.routes.map((route, index) => {
           const { options } = descriptors[route.key];
           const label = options.tabBarLabel !== undefined
@@ -73,19 +93,19 @@ const MyTopTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
           let tabLabel;
           switch (label) {
             case NavigatorConstants.Browse:
-              tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Browse</Text>;
+              tabLabel = <Text style={{ color: colors.text, ...styles.textLabel }}>Browse</Text>;
               break;
             case NavigatorConstants.Watch:
-              tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Watch</Text>;
+              tabLabel = <Text style={{ color: colors.text, ...styles.textLabel }}>Watch</Text>;
               break;
             case NavigatorConstants.Updates:
-              tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Updates</Text>;
+              tabLabel = <Text style={{ color: colors.text, ...styles.textLabel }}>Updates</Text>;
               break;
             case NavigatorConstants.Messages:
-              tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Messages</Text>;
+              tabLabel = <Text style={{ color: colors.text, ...styles.textLabel }}>Messages</Text>;
               break;
             default:
-              tabLabel = <Text style={{ color: isFocused ? Colors.Purple : Colors.Black, ...styles.textLabel }}>Browse</Text>;
+              tabLabel = <Text style={{ color: colors.text, ...styles.textLabel }}>Browse</Text>;
               break;
           }
 
@@ -112,6 +132,7 @@ const MyTopTabBar = ({ state, descriptors, navigation }: MyTabBarProps) => {
             {
               transform: [{ translateX: translateValue }],
               width: tabWidth / 4,
+              backgroundColor: colors.slide,
             },
           ]}
         />

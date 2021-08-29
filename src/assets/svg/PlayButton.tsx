@@ -4,8 +4,8 @@ import Svg, { SvgProps, Path } from 'react-native-svg'
 const PlayButton = (props: SvgProps) => {
   return (
     <Svg
-      width={24}
-      height={24}
+      width={36}
+      height={36}
       viewBox='0 0 24 24'
       fill='none'
       {...props}

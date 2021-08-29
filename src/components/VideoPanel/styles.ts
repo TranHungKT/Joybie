@@ -17,8 +17,8 @@ const styles = StyleSheet.create({
   },
   playButton: {
     position: 'absolute',
-    top: 108,
-    left: 163,
+    top: 100,
+    left: 157,
     zIndex: 999,
   },
 });

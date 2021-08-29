@@ -4,7 +4,6 @@ import {
   Text,
   View,
 } from 'react-native';
-
 import { VideoPanel } from '@components/index';
 import styles from './styles';
 

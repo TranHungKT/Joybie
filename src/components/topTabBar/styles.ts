@@ -2,15 +2,12 @@ import { StyleSheet, Platform, Dimensions } from 'react-native';
 import { Colors } from '../../styles/index';
 
 const styles = StyleSheet.create({
-  containerBgr: {
-    backgroundColor: Colors.White,
-  },
   tabContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     alignSelf: 'center',
-    backgroundColor: Colors.White,
+    // backgroundColor: Colors.White,
     height: 60,
     width: Dimensions.get('window').width / 1.75,
     fontSize: 16,
@@ -20,7 +17,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: 45,
     left: 33,
-    backgroundColor: Colors.Purple,
+    // backgroundColor: Colors.Purple,
   },
   touchableContainer: {
     flex: 1,
