@@ -8,6 +8,7 @@ import { ProfileRouteParams } from '../../routes/RoutesParams';
 
 import styles from './styles';
 import { CloseIcon } from '../../assets';
+import Header from '../detail/component/Header';
 
 type NavigationRoute = RouteProp<ProfileRouteParams, 'RedeemScreen'>;
 
@@ -32,36 +33,42 @@ const RedeemScreen = () => {
   };
 
   return (
-    <ImageBackground source={{ uri: bgrImg }} resizeMode="cover" style={styles.container}>
-      <StatusBar hidden />
-      <View style={styles.modalView}>
-        <View style={{ flex: 0.2 }}>
-          <CloseIcon />
+    <>
+      <ImageBackground source={{ uri: bgrImg }} resizeMode="cover" style={styles.container}>
+        <View style={styles.blackOpac} />
+        <View style={styles.headerWrapper}>
+          <Header whiteColor />
         </View>
-        <View style={styles.content}>
-          <Text style={styles.title}>$15 Voucher</Text>
-          <Text style={styles.description}>
-            Eligible for items in the
-            {'\n'}
-            Kitchen Section
+        <View style={styles.containerWrapper}>
+          <StatusBar hidden />
+          <View style={styles.modalView}>
+            <View style={{ flex: 0.2 }} />
+            <View style={styles.content}>
+              <Text style={styles.title}>$15 Voucher</Text>
+              <Text style={styles.description}>
+                Eligible for items in the
+                {'\n'}
+                Kitchen Section
 
-          </Text>
-          <TouchableOpacity style={styles.button} onPress={goToLink}>
-            <Text style={styles.buttonText}>
-              Browse on
-              {' '}
-              {getUrlName()}
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>
-              Redeem Voucher
-            </Text>
-          </TouchableOpacity>
+              </Text>
+              <TouchableOpacity style={styles.button} onPress={goToLink}>
+                <Text style={styles.buttonText}>
+                  Browse on
+                  {' '}
+                  {getUrlName()}
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>
+                  Redeem Voucher
+                </Text>
+              </TouchableOpacity>
+            </View>
+            <View style={{ flex: 0.2 }} />
+          </View>
         </View>
-        <View style={{ flex: 0.2 }} />
-      </View>
-    </ImageBackground>
+      </ImageBackground>
+    </>
   );
 };
 
