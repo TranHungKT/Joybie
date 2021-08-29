@@ -21,7 +21,6 @@ export default StyleSheet.create({
   },
   searchSection: {
     height: 30,
-
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',

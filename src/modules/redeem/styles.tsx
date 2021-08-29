@@ -4,8 +4,15 @@ import { Colors } from '../../styles';
 export default StyleSheet.create({
   container: {
     flex: 1,
+  },
+  containerWrapper: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  headerWrapper: {
+    marginTop: 20,
+    marginHorizontal: 30,
   },
   modalView: {
     flex: 0.4,
@@ -17,7 +24,7 @@ export default StyleSheet.create({
   title: {
     color: Colors.Purple,
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 24,
     textAlign: 'center',
   },
   description: {
@@ -27,7 +34,7 @@ export default StyleSheet.create({
     marginTop: 20,
   },
   content: {
-    marginTop: 50,
+    marginTop: 35,
   },
   button: {
     marginTop: 20,
@@ -49,5 +56,12 @@ export default StyleSheet.create({
     fontSize: 14,
     fontFamily: 'Poppins-Medium',
     color: Colors.White,
+  },
+  blackOpac: {
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
+    opacity: 0.77,
+    backgroundColor: Colors.Black,
   },
 });
