@@ -15,7 +15,6 @@ export default StyleSheet.create({
     width: '100%',
     height: '100%',
     backgroundColor: Purple,
-    marginTop: 10,
   },
   textLabel: {
     fontSize: 20,
