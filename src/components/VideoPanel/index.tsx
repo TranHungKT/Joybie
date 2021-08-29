@@ -7,18 +7,27 @@ import styles from './styles';
 
 const VideoPanel = () => (
   <View style={styles.videoPanel}>
-    <Image
-      source={require('../../assets/image/video_thumbnails/caley-vanular-1jeHdhQr8T8-unsplash.jpg')}
-      style={styles.image}
-    />
-    <Image
-      source={require('../../assets/image/video_thumbnails/jimmy-dean-9pO3LgH-9-Y-unsplash.jpg')}
-      style={styles.image}
-    />
-    <Image
-      source={require('../../assets/image/video_thumbnails/imani-_TuIdedBPwQ-unsplash.jpg')}
-      style={styles.image}
-    />
+    <View style={styles.image}>
+      <PlayButton style={styles.playButton} />
+      <Image
+        source={require('../../assets/image/video_thumbnails/caley-vanular-1jeHdhQr8T8-unsplash.jpg')}
+        style={styles.image}
+      />
+    </View>
+    <View style={styles.image}>
+      <PlayButton style={styles.playButton} />
+      <Image
+        source={require('../../assets/image/video_thumbnails/jimmy-dean-9pO3LgH-9-Y-unsplash.jpg')}
+        style={styles.image}
+      />
+    </View>
+    <View style={styles.image}>
+      <PlayButton style={styles.playButton} />
+      <Image
+        source={require('../../assets/image/video_thumbnails/imani-_TuIdedBPwQ-unsplash.jpg')}
+        style={styles.image}
+      />
+    </View>
   </View>
 );
 
