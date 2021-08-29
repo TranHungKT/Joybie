@@ -11,7 +11,7 @@ const DotDotDot = (props: SvgProps) => (
   >
     <Path
       d="M18 14a2 2 0 110-4 2 2 0 010 4zm-6 0a2 2 0 110-4 2 2 0 010 4zm-6 0a2 2 0 110-4 2 2 0 010 4z"
-      fill="#000"
+      fill={props.fill}
     />
   </Svg>
 );

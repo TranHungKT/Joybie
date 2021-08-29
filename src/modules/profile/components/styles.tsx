@@ -10,6 +10,7 @@ export default StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: 10,
   },
   name: {
     fontSize: 32,
@@ -25,7 +26,7 @@ export default StyleSheet.create({
   titleText: {
     fontSize: 16,
     marginTop: 10,
-    // marginBottom: 10,
+    marginBottom: 5,
     fontFamily: 'Poppins-Medium',
   },
   rewardView: {

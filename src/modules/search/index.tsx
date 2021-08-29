@@ -1,7 +1,6 @@
 /* eslint-disable global-require */
 import React, { useState, useEffect } from 'react';
 import {
-  Image,
   Keyboard,
   SafeAreaView,
   Text,
@@ -10,8 +9,6 @@ import {
   View,
   ImageSourcePropType,
   ImageBackground,
-  NativeSyntheticEvent,
-  TextInputChangeEventData,
 } from 'react-native';
 import MasonryList from '@react-native-seoul/masonry-list';
 import { Black } from '../../styles/colors';
